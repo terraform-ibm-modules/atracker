@@ -10,7 +10,7 @@ data "ibm_resource_group" "cos_group" {
 }
 
 module "atracker" {
-  source                 = "terraform-ibm-modules/cos/ibm//modules/instance"
+  source                 = "./.."
 
   resource_group         = var.resource_group
   bind_resource_key      = var.bind_resource_key
