@@ -7,10 +7,10 @@ output "atracker_instance_id" {
   value       = concat(ibm_atracker.atracker_target.*.id, [""])[0]
 }
 
-output "atracker_crn" {
-  description = "The CRN of atracker"
-  value       = 
-}
+#output "atracker_crn" {
+#  description = "The CRN of atracker"
+#  value       = 
+#}
 
 output "atracker_route_id" {
   description = "The ID of the atracker route"
