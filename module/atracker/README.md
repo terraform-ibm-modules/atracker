@@ -46,7 +46,7 @@ resource "ibm_atracker_target" "atracker_target" {
         endpoint = "s3.private.${var.location}.cloud-object-storage.appdomain.cloud"
         target_crn = module.cos.cos_instance_id
         bucket = var.prefix != null ? "${var.prefix}-${var.bucket_name}" : var.bucket_name 
-        api_key = module.cos.cos_key_credentials.apikey
+        api_key = module.cos.cos_key_credentials.apikey #pragma: allowlist secret`
     }
     name = (var.atracker_target_name != null ? var.atracker_target_name : "atracker-target-${var.location}")
     target_type = var.atracker_target_type
