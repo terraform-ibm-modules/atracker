@@ -1,7 +1,9 @@
-# IBM Cloud Atracker - Terraform Module
+# IBM Cloud Activity Tracker with COS - Terraform Module
 <br/>
 
-This module is used to create observabillty service with activity tracking on IBM Cloud Platform with storage solution.
+Observability services - gives you the visibility into the performance and health of your resources on IBM Cloud. You can use these services to troubleshoot your apps and services, identify threats, detect performance issues, trigger alerts and more.
+
+This module is used to create observabillty service with Activity Tracking with Cloud Object storage solution on IBM Cloud Platform.
 
 Atracker module provision:
 - Atracker
