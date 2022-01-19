@@ -86,7 +86,7 @@ variable "role" {
 
 
 // COS Bucket Module
-\variable "storage_class" {
+variable "storage_class" {
   description = " storage class to use for the bucket."
   type        = string
   default     = "standard"
