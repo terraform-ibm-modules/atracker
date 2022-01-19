@@ -1,45 +1,31 @@
-# Description : Metadata used to describe a Terraform Module and its contents.
-# Refer to the response payload here - https://www.terraform.io/docs/registry/api.html
-# Registry API, example for observability module: https://registry.terraform.io/v1/modules/terraform-ibm-modules/observability/ibm
-
+---
   id: "terraform-ibm-modules/atracker/ibm/1.4.0"
   owner: "ibmtfprovider"
   namespace: "terraform-ibm-modules"
   name: "atracker"
   version: "1.4.0"
   providers: ["ibm"]
-  provider_logo_url:
-      required : true
-      type : string
-      description : Path of the image to be displayed
-      example: "/images/providers/generic.svg?2"
-  description : "Terraform module used to create atracker with storage solution on IBM Cloud "
+  provider_logo_url: "/images/providers/generic.svg?2"
+  description : "Terraform module used to create activity tracker with storage solution on IBM Cloud "
   source: "https://github.com/terraform-ibm-atracker"
-  tags:
-      required : true
-      type : list(string)
-      description : Used to filter out the required modules
-      example: ["v1.4.0","logging","monitoring","cluster"]
+  owner: "ibmtfprovider"
+  tags: ["v1.4.0","activity-tracker"]
   published_at: "2021-12-10T10:34:28.911362Z"
   registry: ""https://registry.terraform.io/modules/terraform-ibm-modules/atracker/ibm/latest""
-  alias:
-      required : true
-      type : string
-      description : Alias to module
-      example: "ob"
+  alias: "ob"
 ###################################
 # Root module
 ###################################
 root:
-  path: ""
-  name: "atracker"
-   provider_dependencies:
+  - path: ""
+    name: "atracker"
+    provider_dependencies:
       - name: "ibm"
         namespace: "IBM-Cloud"
         source: "IBM-Cloud/ibm"
         version: ""
-  inputs:
-    - name: "resource_group"
+    inputs:
+      - name: "resource_group"
         type : string
         is_required: true
         description: "Name of the resource group"
@@ -50,7 +36,7 @@ root:
         is_force_new: false
         is_provision_controller: false
         is_count_controller: false
-    - name: "bind_resource_key"
+      - name: "bind_resource_key"
         type : bool
         is_required: true
         default_value: false
@@ -65,7 +51,7 @@ root:
         is_provision_controller: false
         is_count_controller: false
         required: true
-    - name: "resource_key_name"
+      - name: "resource_key_name"
         type : string
         is_required: true
         description: "Name of the instance key"
@@ -77,7 +63,7 @@ root:
         regex: "^([a-z]|[a-z][-a-z0-9]*[a-z0-9])$"
         is_provision_controller: false
         is_count_controller: false
-    - name: "bucket_name"
+      - name: "bucket_name"
         type : string
         is_required: true
         description: "COS Bucket name"
@@ -89,7 +75,7 @@ root:
         regex: "^([a-z]|[a-z][-a-z0-9]*[a-z0-9])$"
         is_provision_controller: false
         is_count_controller: false
-    - name: "location"
+      - name: "location"
         type : string
         is_required: true
         description: "single site or region or cross region location info"
@@ -100,19 +86,7 @@ root:
         is_force_new: true
         is_provision_controller: false
         is_count_controller: false
-  outputs:
-      - name: "atracker_instance_id"
-        type : string
-        description : "ID of atracker"
-        example: "1734gd74"
-        is_sensitive: false
-        related_to: ["ibm_atracker.atracker_target"]
-      #- name: "atracker_crn"
-      #  type : string
-      #  description : "The CRN of atracker"
-      #  example: "crn-1734gd74"
-      #  is_sensitive: false
-      #  related_to: [""]
+    outputs:
       - name: "atracker_route_id"
         type : string
         description : "The ID of the atracker route"
