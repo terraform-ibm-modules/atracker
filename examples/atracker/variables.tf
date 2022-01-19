@@ -66,18 +66,6 @@ variable "tags" {
   default     = null
 }
 
-variable "bind_resource_key" {
-  description = "Enable this to bind key to cos instance (true/false)"
-  type        = bool
-  default     = true
-}
-
-variable "resource_key_name" {
-  description = "Name of the key"
-  type        = string
-  default     = "atracker-service-key"
-}
-
 variable "key_parameters" {
   type        = map(string)
   description = "Arbitrary parameters to pass to resourc key"
@@ -98,17 +86,7 @@ variable "role" {
 
 
 // COS Bucket Module
-variable "bucket_name" {
-  type        = string
-  description = "COS Bucket name"
-}
-
-variable "location" {
-  description = "single site or region or cross region location info"
-  type        = string
-}
-
-variable "storage_class" {
+\variable "storage_class" {
   description = " storage class to use for the bucket."
   type        = string
   default     = "standard"
