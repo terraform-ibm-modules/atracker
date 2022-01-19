@@ -107,3 +107,34 @@ terraform destroy -var-file=./input.tfvars
 ## Note
 
 All optional parameters, by default, will be set to `null` in respective example's varaible.tf file. You can also override these optional parameters.
+
+# Usage
+<br/>
+
+To create an infrastructure run the following command
+
+``` terraform apply -var-file="input.tfvars"```
+
+Similarly to remove an infrastructure run the following command
+
+```terraform destroy -var-file="input.tfvars"```
+
+## Detect Secret hook
+Used to detect secrets within a code base.
+
+To create a secret baseline file run following command
+
+```detect-secrets scan --update .secrets.baseline```
+While running the pre-commit hook, if you encounter an error like
+
+```
+WARNING: You are running an outdated version of detect-secrets.
+Your version: 0.13.1+ibm.27.dss
+Latest version: 0.13.1+ibm.46.dss
+See upgrade guide at https://ibm.biz/detect-secrets-how-to-upgrade
+```
+
+run below command
+
+```pre-commit autoupdate```
+which upgrades all the pre-commit hooks present in .pre-commit.yaml file.
