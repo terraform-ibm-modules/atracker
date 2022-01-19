@@ -81,7 +81,7 @@ variable "resource_key_name" {
 variable "key_parameters" {
   type        = map(string)
   description = "Arbitrary parameters to pass to resourc key"
-  default     =  null
+  default     = null
 }
 
 variable "key_tags" {
@@ -141,7 +141,7 @@ variable "expire_rules" {
     days    = string
     prefix  = string
   }))
-  default     = [{
+  default = [{
     rule_id = "default-expiration"
     enable  = true
     days    = 90

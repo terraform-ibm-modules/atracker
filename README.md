@@ -1,10 +1,10 @@
 # IBM Cloud Atracker - Terraform Module
 <br/>
 
-This module is used to create observabillty service with activity tracking on IBM Cloud Platform with storage solution. 
+This module is used to create observabillty service with activity tracking on IBM Cloud Platform with storage solution.
 
-Atracker module provision: 
-- Atracker 
+Atracker module provision:
+- Atracker
 
 # Compatibility
 <br/>

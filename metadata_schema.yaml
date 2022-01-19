@@ -49,10 +49,10 @@ root:
         is_nullable: false
         is_force_new: false
         is_provision_controller: false
-        is_count_controller: false     
+        is_count_controller: false
     - name: "bind_resource_key"
         type : bool
-        is_required: true 
+        is_required: true
         default_value: false
         description: "Enable this to bind key to cos instance (true/false)"
         example: false
@@ -99,7 +99,7 @@ root:
         is_nullable: false
         is_force_new: true
         is_provision_controller: false
-        is_count_controller: false 
+        is_count_controller: false
   outputs:
       - name: "atracker_instance_id"
         type : string
@@ -127,4 +127,4 @@ root:
         related_to: ["ibm_atracker.atracker_target"]
 
 
-  
+

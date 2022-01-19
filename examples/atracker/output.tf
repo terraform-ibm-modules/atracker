@@ -9,7 +9,7 @@ output "atracker_instance_id" {
 
 #output "atracker_crn" {
 #  description = "The CRN of atracker"
-#  value       = 
+#  value       =
 #}
 
 output "atracker_route_id" {
