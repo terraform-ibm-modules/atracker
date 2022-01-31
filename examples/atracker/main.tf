@@ -40,7 +40,7 @@ module "cos_bucket" {
 }
 
 module "atracker" {
-  source = "terraform-ibm-modules/atracker/ibm//modules/atracker"
+  source = "../../"
 
   resource_group    = var.resource_group
   bind_resource_key = var.bind_resource_key
