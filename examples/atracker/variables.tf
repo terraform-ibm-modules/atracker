@@ -7,18 +7,6 @@ variable "resource_group" {
   type        = string
 }
 
-variable "bind_resource_key" {
-  description = "Enable this to bind key to cos instance (true/false)"
-  type        = bool
-  default     = false
-}
-
-variable "resource_key_name" {
-  description = "Name of the instance key"
-  type        = string
-  default     = ""
-}
-
 variable "bucket_name" {
   type        = string
   description = "COS Bucket name"
@@ -58,6 +46,18 @@ variable "parameters" {
   type        = map(string)
   description = "Arbitrary parameters to pass cos instance"
   default     = null
+}
+
+variable "bind_resource_key" {
+  description = "Enable this to bind key to cos instance (true/false)"
+  type        = bool
+  default     = false
+}
+
+variable "resource_key_name" {
+  description = "Name of the instance key"
+  type        = string
+  default     = ""
 }
 
 variable "tags" {
