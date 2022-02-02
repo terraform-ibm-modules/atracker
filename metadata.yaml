@@ -36,33 +36,6 @@ root:
         is_force_new: false
         is_provision_controller: false
         is_count_controller: false
-      - name: "bind_resource_key"
-        type : bool
-        is_required: true
-        default_value: false
-        description: "Enable this to bind key to cos instance (true/false)"
-        example: false
-        is_sensitive: false
-        required: false
-        related_to: ["atracker"]
-        allowed_values: [true, false]
-        is_nullable: false
-        is_force_new: false
-        is_provision_controller: false
-        is_count_controller: false
-        required: true
-      - name: "resource_key_name"
-        type : string
-        is_required: true
-        description: "Name of the instance key"
-        example: "testkey"
-        is_sensitive: false
-        related_to: ["atracker"]
-        is_nullable: false
-        is_force_new: true
-        regex: "^([a-z]|[a-z][-a-z0-9]*[a-z0-9])$"
-        is_provision_controller: false
-        is_count_controller: false
       - name: "bucket_name"
         type : string
         is_required: true
