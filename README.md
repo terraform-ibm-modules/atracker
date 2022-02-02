@@ -1,9 +1,7 @@
 # IBM Cloud Activity Tracker with COS - Terraform Module
 <br/>
 
-Observability services - gives you the visibility into the performance and health of your resources on IBM Cloud. You can use these services to troubleshoot your apps and services, identify threats, detect performance issues, trigger alerts and more.
-
-This module is used to create observabillty service with Activity Tracking with Cloud Object storage solution on IBM Cloud Platform.
+This module is used to create observabillty service of Activity Tracking with Cloud Object storage solution on IBM Cloud Platform. This gives you the visibility into the performance and health of your resources on IBM Cloud. It differs from other observability services like sysdig monitoring and logging with logdna as an alternative storage solution utilizing a COS instance. 
 
 Atracker module provision:
 - Atracker
@@ -58,11 +56,11 @@ module "cos_bucket" {
 module "atracker" {
   source = "terraform-ibm-modules/cos/ibm//modules/instance"
 
-  resource_group    = var.resource_group
-  bind_resource_key = var.bind_resource_key
-  resource_key_name = var.resource_key_name
-  bucket_name       = var.bucket_name
-  location          = var.location
+  resource_group  = var.resource_group
+  bucket_name     = var.bucket_name
+  location        = var.location
+  target_crn      = module.cos.cos_instance_id
+  api_key         = module.cos.cos_key_credentials.apikey
 }
 ```
 
@@ -76,6 +74,15 @@ module "atracker" {
 |atracker_route_name | Name of the atracker route.  Default will be atracker-route-<region> | string| null | no |
 |receive_global_events | Name of the atracker route.  Default will be atracker-route-<region> | bool | true | yes
 
+# Atrcker Outputs
+<br/>
+
+| Name        | Description      | 
+|-------------|------------------|
+|atracker_route_id| The ID of the atracker route | 
+|atracker_target_crn | The CRN of atracker target | 
+
+  
 ## Requirements
 
 ### Terraform plugins
