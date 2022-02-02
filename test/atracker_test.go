@@ -19,10 +19,8 @@ func TestAccIBMAtracker(t *testing.T) {
 		// Variables to pass to our Terraform code using -var options
 		Vars: map[string]interface{}{
 			"resource_group":          "default",
-			"bind_resource_key":        false,
-			"resource_key_name":        "atracker-resource-key",
-			"bucket_name":              "cos-atracker-bucket",
-			"location":                 "us-south",
+			"bucket_name":             "cos-atracker-bucket",
+			"location":                "us-south",
 		},
 	})
 
