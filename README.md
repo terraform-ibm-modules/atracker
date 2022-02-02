@@ -1,7 +1,7 @@
 # IBM Cloud Activity Tracker with COS - Terraform Module
 <br/>
 
-This module is used to create observabillty service of Activity Tracking with Cloud Object storage solution on IBM Cloud Platform. This gives you the visibility into the performance and health of your resources on IBM Cloud. It differs from other observability services like sysdig monitoring and logging with logdna as an alternative storage solution utilizing a COS instance. 
+This module is used to create observabillty service of Activity Tracking with Cloud Object storage solution on IBM Cloud Platform. This gives you the visibility into the performance and health of your resources on IBM Cloud. It differs from other observability services like sysdig monitoring and logging with logdna as an alternative storage solution utilizing a COS instance.
 
 Atracker module provision:
 - Atracker
@@ -60,7 +60,7 @@ module "atracker" {
   bucket_name     = var.bucket_name
   location        = var.location
   target_crn      = module.cos.cos_instance_id
-  api_key         = module.cos.cos_key_credentials.apikey
+  api_key         = module.cos.cos_key_credentials.apikey #pragma: allowlist secret`
 }
 ```
 
@@ -77,12 +77,12 @@ module "atracker" {
 # Atrcker Outputs
 <br/>
 
-| Name        | Description      | 
+| Name        | Description      |
 |-------------|------------------|
-|atracker_route_id| The ID of the atracker route | 
-|atracker_target_crn | The CRN of atracker target | 
+|atracker_route_id| The ID of the atracker route |
+|atracker_target_crn | The CRN of atracker target |
 
-  
+
 ## Requirements
 
 ### Terraform plugins
