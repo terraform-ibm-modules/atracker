@@ -10,5 +10,5 @@ output "atracker_route_id" {
 
 output "atracker_target_crn" {
   description = "The CRN of atracker target"
-  value       = concat(ibm_atracker_target.atracker_target.*.crn, [""])[0]
+  value       = concat(ibm_atracker_target.atracker_target.*.target_crn, [""])[0]
 }
