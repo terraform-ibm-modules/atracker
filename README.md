@@ -58,11 +58,11 @@ module "cos_bucket" {
 module "atracker" {
   source = "terraform-ibm-modules/cos/ibm//modules/instance"
 
-  resource_group    = var.resource_group
-  bind_resource_key = var.bind_resource_key
-  resource_key_name = var.resource_key_name
-  bucket_name       = var.bucket_name
-  location          = var.location
+  resource_group = var.resource_group
+  bucket_name = var.bucket_name
+  location = var.location
+  target_crn = module.cos.cos_instance_id
+  api_key = module.cos.cos_key_credentials.apikey
 }
 ```
 
