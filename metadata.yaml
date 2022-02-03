@@ -36,6 +36,87 @@ root:
         is_force_new: false
         is_provision_controller: false
         is_count_controller: false
+      - name: "target_crn"
+        type : string
+        is_required: true
+        description: "The crn of the Activity Tracking instance"
+        is_sensitive: false
+        related_to: ["cos"]
+        is_nullable: false
+        is_force_new: false
+        is_provision_controller: false
+        is_count_controller: false
+      - name: "api_key"
+        type : string
+        is_required: true
+        description: "The IBM Cloud api token"
+        is_sensitive: true
+        related_to: ["atracker"]
+        is_nullable: false
+        is_force_new: false
+        is_provision_controller: false
+        is_count_controller: false
+      - name: "prefix"
+        type : string
+        is_required: false
+        default_value: ""
+        description: "The prefix name for the service. If not provided it will default to the resource group name"
+        example: "dev-instance"
+        is_sensitive: false
+        related_to: ["atracker"]
+        is_nullable: false
+        is_force_new: false
+        is_provision_controller: false
+        is_count_controller: false
+      - name: "atracker_target_name"
+        type : string
+        is_required: false
+        description: "Name of the atracker target.  Default will be atracker-target-<region>"
+        example: "atracker-target-us-south"
+        is_sensitive: false
+        related_to: ["atracker"]
+        is_nullable: false
+        is_force_new: true
+        regex: "^([a-z]|[a-z][-a-z0-9]*[a-z0-9])$"
+        is_provision_controller: false
+        is_count_controller: false
+      - name: "atracker_target_type"
+        type : string
+        is_required: false
+        default_value: "cloud_object_storage"
+        description: "Target type for atracker"
+        example: "cloud_object_storage"
+        is_sensitive: false
+        related_to: ["atracker-target"]
+        is_nullable: false
+        is_force_new: false
+        is_provision_controller: false
+        is_count_controller: false
+      - name: "atracker_route_name"
+        type : string
+        is_required: false
+        description: "Name of the atracker target.  Default will be atracker-route-<region>"
+        example: "atracker-route-us-south"
+        is_sensitive: false
+        related_to: ["atracker"]
+        is_nullable: false
+        is_force_new: true
+        regex: "^([a-z]|[a-z][-a-z0-9]*[a-z0-9])$"
+        is_provision_controller: false
+        is_count_controller: false
+      - name: "receive_global_events"
+        type : bool
+        is_required: false
+        default_value: true
+        description: "Indicates whether or not all global events should be forwarded to this region."
+        example: true
+        is_sensitive: false
+        allowed_values: [true,false]
+        related_to: ["atracker-route"]
+        is_nullable: true
+        is_force_new: false
+        is_provision_controller: false
+        is_count_controller: false
       - name: "bucket_name"
         type : string
         is_required: true
