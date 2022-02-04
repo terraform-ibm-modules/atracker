@@ -42,7 +42,7 @@ module "cos_bucket" {
 module "atracker" {
   //Uncomment link below line to make it point to registry level
   //source = "terraform-ibm-modules/atracker/ibm"
-  
+
   source = "../.."
 
   resource_group = var.resource_group
