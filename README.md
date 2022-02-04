@@ -1,7 +1,7 @@
 # IBM Cloud ATracker - Terraform Module
 <br/>
 
-This module is used to send Activity Tracking events to ATracker instead of LogDNA. This gives you the visibility into the performance and health of your resources on IBM Cloud. It differs by AT events separated from log events (double agent) and AT events sent to a new ATracker URL.
+This module is used to send AT events to ATracker instead of LogDNA, so that ATracker can forward the events to COS. This gives you the visibility into the performance and health of your resources on IBM Cloud. It differs from other observability services by AT events being separated from log events (double agent) and AT events sent to a new ATracker URL.
 
 Atracker module provision:
 - Atracker
