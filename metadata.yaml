@@ -153,6 +153,18 @@ root:
         example: "crn-1734gd74"
         is_sensitive: false
         related_to: ["ibm_atracker.atracker_target"]
-
-
-
+    resources:
+      - type: "ibm_atracker_target"
+        name: "atracker_target"
+        description: "This allows Activity Tracker Target to be created, updated and deleted."
+        provider: "ibm"
+      - type: "ibm_atracker_route"
+        name: "atracker_route"
+        description: "This allows Activity Tracker Route to be created, updated and deleted."
+        provider: "ibm"
+        dependent_on: ["ibm_atracker_target.atracker_target.id"]
+     datasources:
+      - type: "ibm_resource_group"
+        name: "cos_group"
+        description: "Create, update, or delete an IBM Cloud resource group."
+        provider: "ibm"
