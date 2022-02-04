@@ -1,7 +1,7 @@
 # IBM Cloud ATracker - Terraform Module
 <br/>
 
-This module is used to create observabillty service of Activity Tracking with Cloud Object storage solution on IBM Cloud Platform. This gives you the visibility into the performance and health of your resources on IBM Cloud. It differs from other observability services like sysdig monitoring and logging with logdna as an alternative storage solution utilizing a COS instance.
+This module is used to send Activity Tracking events to ATracker instead of LogDNA. This gives you the visibility into the performance and health of your resources on IBM Cloud. It differs by AT events separated from log events (double agent) and AT events sent to a new ATracker URL.
 
 Atracker module provision:
 - Atracker
