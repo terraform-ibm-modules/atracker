@@ -54,7 +54,7 @@ module "cos_bucket" {
 }
 
 module "atracker" {
-  source = "terraform-ibm-modules/cos/ibm//modules/instance"
+  source = "terraform-ibm-modules/atracker/ibm"
 
   resource_group  = var.resource_group
   bucket_name     = var.bucket_name
