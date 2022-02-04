@@ -1,4 +1,4 @@
-# IBM Cloud Activity Tracker with COS - Terraform Module
+# IBM Cloud ATracker - Terraform Module
 <br/>
 
 This module is used to create observabillty service of Activity Tracking with Cloud Object storage solution on IBM Cloud Platform. This gives you the visibility into the performance and health of your resources on IBM Cloud. It differs from other observability services like sysdig monitoring and logging with logdna as an alternative storage solution utilizing a COS instance.
