@@ -56,7 +56,7 @@ module "cos_bucket" {
 module "atracker" {
   //Uncomment link below line to make it point to registry level
   //source = "terraform-ibm-modules/atracker/ibm"
-  
+
   source = "../.."
 
   resource_group  = var.resource_group
@@ -84,7 +84,6 @@ module "atracker" {
 |-------------|------------------|
 |atracker_route_id| The ID of the atracker route |
 |atracker_target_crn | The CRN of atracker target |
-
 
 ## Requirements
 
