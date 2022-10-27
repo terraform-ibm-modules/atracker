@@ -1,10 +1,10 @@
 terraform {
+  required_version = ">=0.13"
   required_providers {
     ibm = {
-      source  = "ibm-cloud/ibm"
-      version = ">= 1.9.0"
+      source = "IBM-Cloud/ibm"
+
     }
   }
-  required_version = ">=0.13"
 }
-
+ 
